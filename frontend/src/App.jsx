@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import Header from "./components/UI/Header"
+import Header from "@components/UI/Header"
+import Footer from "@components/UI/Footer"
 const API_URL = import.meta.env.VITE_API_URL
 function App() {
   const [items, setItems] = useState([])
@@ -21,6 +22,7 @@ function App() {
           </li>
         ))}
       </ul>
+      <Footer />
       </>
     )
 }
