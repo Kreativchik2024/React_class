@@ -13,8 +13,9 @@ function App() {
   },[])
     return (
       <>
-      <Header />
+      <Header text = "шапка старницыsss" title = "HELLO" />
       <h1>Список Вещей</h1>
+      
       <ul>
         {items.map(item => (
           <li key={item.id}>
@@ -22,6 +23,7 @@ function App() {
           </li>
         ))}
       </ul>
+      <Header text = "А что это тут происходит" title = "HELLO" />
       <Footer />
       </>
     )

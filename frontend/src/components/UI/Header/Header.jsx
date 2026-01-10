@@ -1,6 +1,7 @@
-const Header = () => {
+const Header = (props) => {
+    console.log(props)
     return (
-        <header>Шапка страницы</header>
+        <header>{props.text}</header>
     )
 }
 
