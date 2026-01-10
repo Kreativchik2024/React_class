@@ -23,7 +23,6 @@ function App() {
           </li>
         ))}
       </ul>
-      <Header text = "А что это тут происходит" title = "HELLO" />
       <Footer />
       </>
     )
