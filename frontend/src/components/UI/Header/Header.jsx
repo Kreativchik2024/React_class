@@ -1,7 +1,7 @@
-const Header = (props) => {
-    console.log(props)
+const Header = ({text, title}) => {
+    
     return (
-        <header>{props.text}</header>
+        <header>{text} {title}</header>
     )
 }
 
