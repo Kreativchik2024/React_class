@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import './style.css'
+import ItemCard from "@components/Item/ItemCard"
 const API_URL = import.meta.env.VITE_API_URL
 
 const ItemList = () => {
@@ -20,10 +20,7 @@ const ItemList = () => {
 
             
                 {items.map(item => (
-                    <div key={item.id} className="item">
-                        <strong>{item.name}</strong>:{item.description}
-                        <div>{item.isAvailable ? ' В наличии ' : ' нет в наличии'}</div>
-                    </div>
+                    <ItemCard key ={item.id} item ={item}/>
                 ))}
             
             </div>
