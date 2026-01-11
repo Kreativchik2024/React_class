@@ -1,6 +1,7 @@
+import "./style.css"
 const Image = ({ imageUrl }) => {
     return (
-        <img src={imageUrl} />
+        <img src={imageUrl} className="img1"/>
     )
 }
 

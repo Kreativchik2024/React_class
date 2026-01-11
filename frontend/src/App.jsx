@@ -10,6 +10,7 @@ function App() {
   const [items, setItems] = useState([])
   const [tempText, setTempText] = useState("Hello Worrld!")
   const [userText, setUserText] = useState('')
+  const [click,setClick] = useState(0)
   const pClick = () => {
     console.log("нажали на р")
     setTempText(10)
@@ -20,6 +21,11 @@ function App() {
     .then(response => setItems(response.data))
     .catch(error => console.error(error))
   },[])
+
+  useEffect(()=> {
+    document.title = `Вы нажали ${click} раз`
+  })
+
     return (
       <>
       <p onClick = {pClick} onMouseEnter={()=>console.log("навели на р ")}>{tempText}</p>
@@ -36,6 +42,8 @@ function App() {
       <div>Вы ввели: {userText}</div>
       <input type="text" onChange={event => setUserText(event.target.value)} />
       
+      <Header/>
+      <button onClick={()=> setClick(click + 1)} >Клик : {click}</button>
       <Image imageUrl={animeImgUrl} />
       <Footer />
       </>
