@@ -11,6 +11,7 @@ const ItemList = () => {
             .then(response => setItems(response.data))
             .catch(error => console.error(error))
     }, [])
+    if (items.length > 0) {
     return (
         <>
         < h1 > Список Вещей</h1 >
@@ -24,5 +25,14 @@ const ItemList = () => {
             </ul>
     </>
 )
+
 } 
+else {
+    return (
+        <div className = "Items">
+            <h3>Вещей нет</h3>
+        </div>
+    )
+}
+}
 export default ItemList
