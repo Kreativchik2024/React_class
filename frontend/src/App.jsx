@@ -4,13 +4,11 @@ import Footer from "@components/UI/Footer"
 
 
 
+
 function App() {
-
-
 
     return (
       <>
-      
       <Header text = "шапка старницыsss" title = "HELLO" />
       
       <main>
@@ -19,10 +17,6 @@ function App() {
       <aside>
         
       </aside>
-      
-      
-      
-      
       <Footer />
       </>
     )

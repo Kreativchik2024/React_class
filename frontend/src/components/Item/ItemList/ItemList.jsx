@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import './style.css'
 const API_URL = import.meta.env.VITE_API_URL
 
 const ItemList = () => {
@@ -14,22 +15,25 @@ const ItemList = () => {
     if (items.length > 0) {
     return (
         <>
+        <div>
         < h1 > Список Вещей</h1 >
 
-            <ul>
+            
                 {items.map(item => (
-                    <li key={item.id}>
+                    <div key={item.id} className="item">
                         <strong>{item.name}</strong>:{item.description}
-                    </li>
+                        <div>{item.isAvailable ? ' В наличии ' : ' нет в наличии'}</div>
+                    </div>
                 ))}
-            </ul>
+            
+            </div>
     </>
 )
 
 } 
 else {
     return (
-        <div className = "Items">
+        <div className = "item">
             <h3>Вещей нет</h3>
         </div>
     )
