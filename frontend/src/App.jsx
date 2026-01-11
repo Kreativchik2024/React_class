@@ -8,6 +8,11 @@ import animeImgUrl from "./images/2.png"
 const API_URL = import.meta.env.VITE_API_URL
 function App() {
   const [items, setItems] = useState([])
+  const [tempText, setTempText] = useState("Hello Worrld!")
+  const pClick = () => {
+    console.log("нажали на р")
+    setTempText(10)
+  }
 
   useEffect(()=> {
     axios.get(`${API_URL}/items`)
@@ -16,6 +21,7 @@ function App() {
   },[])
     return (
       <>
+      <p onClick = {pClick} onMouseEnter={()=>console.log("навели на р ")}>{tempText}</p>
       <Header text = "шапка старницыsss" title = "HELLO" />
       <h1>Список Вещей</h1>
       
