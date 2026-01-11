@@ -3,18 +3,11 @@ import axios from "axios"
 import Header from "@components/UI/Header"
 import Footer from "@components/UI/Footer"
 
-import Image from "@components/image"
-import animeImgUrl from "./images/2.png"
+
 const API_URL = import.meta.env.VITE_API_URL
 function App() {
   const [items, setItems] = useState([])
-  const [tempText, setTempText] = useState("Hello Worrld!")
-  const [userText, setUserText] = useState('')
-  const [click,setClick] = useState(0)
-  const pClick = () => {
-    console.log("нажали на р")
-    setTempText(10)
-  }
+
 
   useEffect(()=> {
     axios.get(`${API_URL}/items`)
@@ -22,13 +15,11 @@ function App() {
     .catch(error => console.error(error))
   },[])
 
-  useEffect(()=> {
-    document.title = `Вы нажали ${click} раз`
-  }, )
+
 
     return (
       <>
-      <p onClick = {pClick} onMouseEnter={()=>console.log("навели на р ")}>{tempText}</p>
+      
       <Header text = "шапка старницыsss" title = "HELLO" />
       <h1>Список Вещей</h1>
       
@@ -39,12 +30,10 @@ function App() {
           </li>
         ))}
       </ul>
-      <div>Вы ввели: {userText}</div>
-      <input type="text" onChange={event => setUserText(event.target.value)} />
       
-      <Header/>
-      <button onClick={()=> setClick(click + 1)} >Клик : {click}</button>
-      <Image imageUrl={animeImgUrl} />
+      
+      
+      
       <Footer />
       </>
     )
